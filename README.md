@@ -17,6 +17,8 @@ premake5 --cc=clang gmake # Linux flavor. GCC would work as well.
 premake5 vs2013           # Windows build.
 ```
 
+Your solution/Makefile files will be in the `build` directory.
+
 
 ## Credits
 Original credits to James *Zer* Bellinger. See `Licence.txt` for the original licensing terms,
