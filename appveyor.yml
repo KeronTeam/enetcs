@@ -19,7 +19,7 @@ before_build:
   - dir
 build:
   project: build\enet-cs.sln
-  verbosity: minimal
+  verbosity: detailed
 artifacts:
   - path: bin\$(configuration)
     name: fso-continuous-$(configuration)-$(VS_VERSION)
