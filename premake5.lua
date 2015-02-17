@@ -20,8 +20,6 @@ solution "enet-cs"
                 architecture "x32"
                 targetsuffix "X86"
 		targetextension ".dll"
-		buildoptions { "/MD" }
-		linkoptions  { "/MD" }
         filter "system:linux"
                 targetname "enet"
                 targetextension ".so.1"
@@ -31,7 +29,7 @@ solution "enet-cs"
         language "C#"
         framework "2.0"
         files { "ENetCS/**.cs" }
-        buildoptions { "/unsafe" }
+        flags { "Unsafe" }
         links { "System" }
         filter "system:windows"
             architecture "x32"
