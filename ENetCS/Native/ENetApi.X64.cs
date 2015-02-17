@@ -26,7 +26,7 @@ namespace ENet.Native
 {
     unsafe sealed class ENetApiX64 : ENetApi
     {
-        const string LIB = "ENetX64.dll";
+        const string LIB = "libenet";
 
         #region Address Functions
         public override int address_set_host(ref ENetAddress address, byte* hostName)

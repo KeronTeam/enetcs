@@ -27,13 +27,7 @@ solution "enet-cs"
             flags { "Symbols" }
 
         filter "system:windows"
-                targetname "ENet"
-                targetsuffix "X86"
                 links { "Winmm", "Ws2_32" }
-
-        filter "system:linux"
-                targetname "enet"
-                targetextension ".so.1"
 
     project "ENet"
         kind "SharedLib"

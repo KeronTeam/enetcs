@@ -40,7 +40,7 @@ namespace ENet.Native
         public const uint ENET_PROTOCOL_MAXIMUM_FRAGMENT_COUNT = 1024 * 1024;
         public const uint ENET_PROTOCOL_MAXIMUM_PACKET_SIZE = 1024 * 1024 * 1024;
         public const uint ENET_PROTOCOL_MAXIMUM_PEER_ID = 0xfff;
-        const uint ENET_VERSION = (1 << 16) | (3 << 8) | (6 << 0);
+        const uint ENET_VERSION = (1 << 16) | (3 << 8) | (12 << 0);
 
         #region Platform Detection
         internal static ENetApi _platform;
@@ -61,34 +61,13 @@ namespace ENet.Native
                     {
                         if (_platform == null)
                         {
-                            foreach (ENetApi platform in new ENetApi[]
-                                {
-                                    new ENetApiX64(),
-                                    new ENetApiX86(),
-                                    new ENetApiLinux(),
-                                    new ENetApiMacOS()
-                                })
+                            foreach (ENetApi platform in new ENetApi[] { new ENetApiX64() })
                             {
-                                try
-                                {
                                     ENetCallbacks inits = new ENetCallbacks();
                                     if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
                                     {
                                         _platform = platform; return platform;
                                     }
-                                }
-                                catch (BadImageFormatException)
-                                {
-                                    continue;
-                                }
-                                catch (DllNotFoundException)
-                                {
-                                    continue;
-                                }
-                                catch (EntryPointNotFoundException)
-                                {
-                                    continue;
-                                }
                             }
 
                             throw new ENetException
