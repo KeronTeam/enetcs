@@ -23,7 +23,7 @@ build:
   project: build\enet-cs.sln
   verbosity: normal
 artifacts:
-  - path: build\bin\*.dll
+  - path: build\*.dll
     name: enetcs-$(configuration)-$(VS_VERSION)
-  - path: build\bin\ENetDemo.exe
+  - path: build\ENetDemo.exe
     name: ENetDemo-$(configuration)-$(VS_VERSION).exe
