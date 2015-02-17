@@ -1,13 +1,14 @@
 solution "enet-cs"
     configurations { "Release", "Debug" }
     location "build"
-    
+
     filter "system:windows"
-    	architecture "x32"
+    	architecture { "x32", "x64" }
 
     project "libenet"
         kind "SharedLib"
         language "C"
+        targetdir "lib/%{prj.buildcfg}-%{prj.architecture}"
         files { "enet/*.c" }
         includedirs { "enet/include/" }
         defines {
@@ -19,8 +20,14 @@ solution "enet-cs"
 
         filter "system:windows"
                 targetname "ENet"
+                links { "Winmm", "Ws2_32" }
+
+        filter { "system:windows", "architecture:x32" }
                 targetsuffix "X86"
-		links { "Winmm", "Ws2_32" }
+
+        filter { "system:windows", "architecture:x64" }
+                targetsuffix "X64"
+
         filter "system:linux"
                 targetname "enet"
                 targetextension ".so.1"
@@ -29,6 +36,7 @@ solution "enet-cs"
         kind "SharedLib"
         language "C#"
         framework "2.0"
+        targetdir "lib/%{prj.buildcfg}-%{prj.architecture}"
         files { "ENetCS/**.cs" }
         flags { "Unsafe" }
         links { "System" }
@@ -37,5 +45,6 @@ solution "enet-cs"
         kind "ConsoleApp"
         language "C#"
         framework "2.0"
+        targetdir "bin/%{prj.buildcfg}-%{prj.architecture}"
         files { "ENetDemo/**.cs" }
         links { "ENet", "System" }
