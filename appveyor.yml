@@ -17,11 +17,14 @@ install:
 before_build:
   - git submodule init
   - git submodule update
+  - del /F /S build
   - premake5.exe %VS_VERSION%
   - dir
 build:
-  project: build\enet-cs.sln
+  project: build\%VS_VERSION%\enet-cs.sln
   verbosity: normal
+after_build:
+  - tree
 artifacts:
   - path: build\$(VS_VERSION)\lib
     name: enetcs-$(configuration)-$(VS_VERSION)
