@@ -20,6 +20,8 @@ solution "enet-cs"
                 architecture "x32"
                 targetsuffix "X86"
 		targetextension ".dll"
+		buildoptions { "/MD" }
+		linkoptions  { "/MD" }
         filter "system:linux"
                 targetname "enet"
                 targetextension ".so.1"
