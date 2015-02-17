@@ -5,6 +5,9 @@ branches:
 configuration:
   - Debug
   - Release
+platform:
+  - x32
+  - x64
 environment:
   matrix:
   - VS_VERSION: vs2012
