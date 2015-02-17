@@ -15,6 +15,7 @@ install:
   - unzip premake.zip
   - move bin\release\premake5.exe .
 before_build:
+  - del /F /S build
   - premake5.exe %VS_VERSION%
   - dir
 build:
