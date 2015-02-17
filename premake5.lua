@@ -1,6 +1,6 @@
 solution "enet-cs"
     configurations { "Release", "Debug" }
-    location ("build/" .. _ACTION)
+    location "build"
 
     filter "system:windows"
     	platforms { "x32", "x64" }

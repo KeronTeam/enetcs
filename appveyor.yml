@@ -20,17 +20,17 @@ before_build:
   - del /F /S build
   - premake5.exe %VS_VERSION%
   - dir
-  - dir build\%VS_VERSION%
+  - dir build
   - tree
 build:
-  project: build\$(VS_VERSION)\enet-cs.sln
+  project: build\enet-cs.sln
   verbosity: normal
 after_build:
   - tree
 artifacts:
-  - path: build\$(VS_VERSION)\lib
+  - path: build\lib
     name: enetcs-$(configuration)-$(VS_VERSION)
     type: zip
-  - path: build\$(VS_VERSION)\bin
+  - path: build\bin
     name: ENetDemo-$(configuration)-$(VS_VERSION)
     type: zip
