@@ -8,7 +8,7 @@ solution "enet-cs"
     project "libenet"
         kind "SharedLib"
         language "C"
-        targetdir "lib/%{cfg.buildcfg}-%{cfg.architecture}"
+        targetdir "build/lib/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "enet/*.c" }
         includedirs { "enet/include/" }
         defines {
@@ -39,7 +39,7 @@ solution "enet-cs"
         kind "SharedLib"
         language "C#"
         framework "2.0"
-        targetdir "lib-%{cfg.buildcfg}-%{cfg.architecture}"
+        targetdir "build/lib/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "ENetCS/**.cs" }
         flags { "Unsafe" }
         links { "System" }
@@ -48,6 +48,6 @@ solution "enet-cs"
         kind "ConsoleApp"
         language "C#"
         framework "2.0"
-        targetdir "bin/%{cfg.buildcfg}-%{cfg.architecture}"
+        targetdir "build/bin/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "ENetDemo/**.cs" }
         links { "ENet", "System" }
