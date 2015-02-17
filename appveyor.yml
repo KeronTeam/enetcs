@@ -15,7 +15,8 @@ install:
   - unzip premake.zip
   - move bin\release\premake5.exe .
 before_build:
-  - del /F /S build
+  - git submodule init
+  - git submodule update
   - premake5.exe %VS_VERSION%
   - dir
 build:
