@@ -1,6 +1,9 @@
 solution "enet-cs"
     configurations { "Release", "Debug" }
     location "build"
+    
+    filter "system:windows"
+    	architecture "x32"
 
     project "libenet"
         kind "SharedLib"
@@ -15,11 +18,8 @@ solution "enet-cs"
         }
 
         filter "system:windows"
-                targetprefix ""
                 targetname "ENet"
-                architecture "x32"
                 targetsuffix "X86"
-		targetextension ".dll"
 		links { "Winmm", "Ws2_32" }
         filter "system:linux"
                 targetname "enet"
@@ -32,8 +32,6 @@ solution "enet-cs"
         files { "ENetCS/**.cs" }
         flags { "Unsafe" }
         links { "System" }
-        filter "system:windows"
-            architecture "x32"
 
     project "ENetDemo"
         kind "ConsoleApp"
