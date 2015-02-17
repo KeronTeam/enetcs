@@ -20,8 +20,10 @@ before_build:
   - del /F /S build
   - premake5.exe %VS_VERSION%
   - dir
+  - dir build\%VS_VERSION%
+  - tree
 build:
-  project: build\%VS_VERSION%\enet-cs.sln
+  project: build\$(VS_VERSION)\enet-cs.sln
   verbosity: normal
 after_build:
   - tree
