@@ -23,9 +23,9 @@ build:
   project: build\enet-cs.sln
   verbosity: normal
 artifacts:
-  - path: build\lib
+  - path: build\$(VS_VERSION)\lib
     name: enetcs-$(configuration)-$(VS_VERSION)
     type: zip
-  - path: build\bin
+  - path: build\$(VS_VERSION)\bin
     name: ENetDemo-$(configuration)-$(VS_VERSION)
     type: zip

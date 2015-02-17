@@ -1,14 +1,20 @@
 solution "enet-cs"
     configurations { "Release", "Debug" }
-    location "build"
+    location ("build/" .. _ACTION)
 
     filter "system:windows"
-    	architectures { "x32", "x64" }
+    	platforms { "x32", "x64" }
+
+    filter { "system:windows", "platforms:x32" }
+        architecture "x32"
+
+    filter { "system:windows", "platforms:x64" }
+        architecture "x64"
 
     project "libenet"
         kind "SharedLib"
         language "C"
-        targetdir "lib/%{prj.buildcfg}-%{prj.architecture}"
+        targetdir "lib/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "enet/*.c" }
         includedirs { "enet/include/" }
         defines {
@@ -17,6 +23,14 @@ solution "enet-cs"
             "HAS_INET_PTON", "HAS_INET_NTOP",
             "HAS_MSGHDR_FLAGS", "HAS_SOCKLEN_T"
         }
+
+        filter "configurations:Release"
+            defines { "NDEBUG" }
+            optimize "Full"
+
+        filter "configurations:Debug"
+            defines { "DEBUG" }
+            flags { "Symbols" }
 
         filter "system:windows"
                 targetname "ENet"
@@ -36,7 +50,7 @@ solution "enet-cs"
         kind "SharedLib"
         language "C#"
         framework "2.0"
-        targetdir "lib/%{prj.buildcfg}-%{prj.architecture}"
+        targetdir "lib-%{cfg.buildcfg}-%{cfg.architecture}"
         files { "ENetCS/**.cs" }
         flags { "Unsafe" }
         links { "System" }
@@ -45,6 +59,6 @@ solution "enet-cs"
         kind "ConsoleApp"
         language "C#"
         framework "2.0"
-        targetdir "bin/%{prj.buildcfg}-%{prj.architecture}"
+        targetdir "bin/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "ENetDemo/**.cs" }
         links { "ENet", "System" }
