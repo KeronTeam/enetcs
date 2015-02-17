@@ -6,7 +6,7 @@ configuration:
   - Debug
   - Release
 platform:
-  - x32
+  - Win32
   - x64
 environment:
   matrix:
