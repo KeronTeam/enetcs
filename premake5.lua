@@ -20,6 +20,7 @@ solution "enet-cs"
                 architecture "x32"
                 targetsuffix "X86"
 		targetextension ".dll"
+		links { "Winmm", "Ws2_32" }
         filter "system:linux"
                 targetname "enet"
                 targetextension ".so.1"
