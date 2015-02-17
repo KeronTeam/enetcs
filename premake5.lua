@@ -3,7 +3,7 @@ solution "enet-cs"
     location "build"
 
     filter "system:windows"
-    	architecture { "x32", "x64" }
+    	architectures { "x32", "x64" }
 
     project "libenet"
         kind "SharedLib"
