@@ -2,14 +2,8 @@ solution "enet-cs"
     configurations { "Release", "Debug" }
     location "build"
 
-    filter "system:windows"
-    	platforms { "x32", "x64" }
-
-    filter { "system:windows", "platforms:x32" }
-        architecture "x32"
-
-    filter { "system:windows", "platforms:x64" }
-        architecture "x64"
+    filter { "system:windows" }
+        architecture "universal"
 
     project "libenet"
         kind "SharedLib"
@@ -34,13 +28,8 @@ solution "enet-cs"
 
         filter "system:windows"
                 targetname "ENet"
-                links { "Winmm", "Ws2_32" }
-
-        filter { "system:windows", "architecture:x32" }
                 targetsuffix "X86"
-
-        filter { "system:windows", "architecture:x64" }
-                targetsuffix "X64"
+                links { "Winmm", "Ws2_32" }
 
         filter "system:linux"
                 targetname "enet"
