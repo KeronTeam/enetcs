@@ -29,7 +29,7 @@ solution "enet-cs"
         language "C#"
         framework "2.0"
         files { "ENetCS/**.cs" }
-        buildoptions { "/unsafe+" }
+        buildoptions { "/unsafe" }
         links { "System" }
         filter "system:windows"
             architecture "x32"
