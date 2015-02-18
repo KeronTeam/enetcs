@@ -24,7 +24,6 @@ deploy:
   api_key:
     secure: "ekZ4NhTGNhqh+romed8ONUqGW4KJcH3FFFYa2OgTPd3paPWbuuPma3Aw3xZvx4zAFk8iWImi7zxvNM51OZ3eohKSAUPfxfjlTuPXDvJ6I09nWeUutnKYe7lW5wXUXk0DJR5b/0wXCw9GiPZT/fKPFMa7isvY6C8D+qOjdYGJ19s="
   file: "$TRAVIS_BUILD_DIR/build/lib/Release-x64/enetcs-linux-x64.tar.bz2"
-  title: "enetcs-$TRAVIS_TAG"
   draft: true
   skip_cleanup: true
   on:

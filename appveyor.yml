@@ -39,7 +39,8 @@ artifacts:
     type: zip
 
 deploy:
-  release: $(appveyor_repo_tag_name)
+  # Easy merging with Travis which cannot (yet) set a release name...
+  release: Draft
   provider: GitHub
   auth_token:
     secure: G3HvPst0LoqEgOTkUPXXigIfBuKgvXyN4LaPNBxLTeYtahjcFfa5JUXE8EB+4onF
