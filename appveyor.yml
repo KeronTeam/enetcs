@@ -5,7 +5,9 @@ branches:
 configuration:
   - Debug
   - Release
-platform: x86
+platform:
+  - x86
+  - x64
 environment:
   matrix:
   - VS_VERSION: vs2012
@@ -19,7 +21,7 @@ before_build:
   - git submodule init
   - git submodule update
   - del /F /S build
-  - premake5.exe %VS_VERSION%
+  - premake5.exe --arch=%PLATFORM% %VS_VERSION%
   - dir
   - dir build
   - tree
@@ -30,8 +32,8 @@ after_build:
   - tree
 artifacts:
   - path: build\lib
-    name: enetcs-$(configuration)-$(VS_VERSION)
+    name: enetcs-$(configuration)-$(platform)-$(VS_VERSION)
     type: zip
   - path: build\bin
-    name: ENetDemo-$(configuration)-$(VS_VERSION)
+    name: ENetDemo-$(configuration)-$(platform)-$(VS_VERSION)
     type: zip
