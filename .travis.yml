@@ -15,7 +15,7 @@ script:
   - make -C build/ verbose=1
 
 after_script:
-  - cd build/Release-x64
+  - cd build/lib/Release-x64
   - tar cjf enetcs-linux-x64.tar.bz2 ENet.dll libenet.so
   - cd ../..
 deploy:
