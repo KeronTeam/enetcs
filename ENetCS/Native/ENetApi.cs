@@ -61,13 +61,12 @@ namespace ENet.Native
                     {
                         if (_platform == null)
                         {
-                            using(ENetApi platform = new ENetApiPlatform())
+                            ENetApi platform = new ENetApiPlatform();
+                            ENetCallbacks inits = new ENetCallbacks();
+
+                            if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
                             {
-                                ENetCallbacks inits = new ENetCallbacks();
-                                if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
-                                {
-                                    _platform = platform;
-                                }
+                                _platform = platform;
                             }
                         }
 
