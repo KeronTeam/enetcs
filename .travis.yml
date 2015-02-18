@@ -6,6 +6,8 @@ before_script:
   - wget -O /tmp/premake-dev-linux.zip http://sourceforge.net/projects/premake/files/Premake/nightlies/premake-dev-linux.zip/download
   - unzip /tmp/premake-dev-linux.zip
   - export PATH=$PATH:$PWD/bin/release
+  - git submodule init
+  - git submodule update
 script:
   - premake5 --cc=clang --arch=x64 gmake
   # Circumvent https://bitbucket.org/premake/premake-dev/issue/258/response-file-doesnt-work-on-linux
