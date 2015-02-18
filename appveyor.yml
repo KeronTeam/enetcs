@@ -44,6 +44,7 @@ deploy:
   auth_token:
     secure: G3HvPst0LoqEgOTkUPXXigIfBuKgvXyN4LaPNBxLTeYtahjcFfa5JUXE8EB+4onF
   artifact: enetcs-win-$(configuration)-$(platform)-$(VS_VERSION)
+  draft: true
   on:
     branch: master
     appveyor_repo_tag: true
