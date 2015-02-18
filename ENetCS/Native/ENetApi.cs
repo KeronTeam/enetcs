@@ -61,22 +61,14 @@ namespace ENet.Native
                     {
                         if (_platform == null)
                         {
-                            foreach (ENetApi platform in new ENetApi[] { new ENetApiX64() })
+                            using(ENetApi platform = new ENetApiPlatform())
                             {
-                                    ENetCallbacks inits = new ENetCallbacks();
-                                    if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
-                                    {
-                                        _platform = platform; return platform;
-                                    }
+                                ENetCallbacks inits = new ENetCallbacks();
+                                if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
+                                {
+                                    _platform = platform;
+                                }
                             }
-
-                            throw new ENetException
-                                ("The ENet native library failed to initialize." +
-                                    " Make sure ENetX86.dll and ENetX64.dll are in the program directory, and that" +
-                                    " you are running on a x86 or x64-based computer." +
-                                    " If you are running on Linux, make sure the libenet.so.1 is in your path." +
-                                    " On Ubuntu Linux, install the libenet1a package (1.3.3 or newer) if you haven't already." +
-                                    " If you are running on MacOS, make sure libenet.dylib is in your path or program directory.");
                         }
 
                         return _platform;

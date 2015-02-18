@@ -24,7 +24,7 @@ using System.Runtime.InteropServices;
 
 namespace ENet.Native
 {
-    unsafe sealed class ENetApiX64 : ENetApi
+    unsafe sealed class ENetApiPlatform : ENetApi
     {
         const string LIB = "libenet";
 
