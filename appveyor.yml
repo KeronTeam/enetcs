@@ -14,7 +14,7 @@ environment:
   - VS_VERSION: vs2013
 install:
   - cinst wget
-  - wget -nv -O premake.zip http://sourceforge.net/projects/premake/files/Premake/nightlies/premake-dev-windows.zip/download
+  - wget -nv -O premake.zip http://kent.dl.sourceforge.net/project/premake/Premake/nightlies/premake-dev-linux.zip
   - unzip premake.zip
   - move bin\release\premake5.exe .
 before_build:
