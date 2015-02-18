@@ -32,8 +32,19 @@ after_build:
   - tree
 artifacts:
   - path: build\lib
-    name: enetcs-$(configuration)-$(platform)-$(VS_VERSION)
+    name: enetcs-win-$(configuration)-$(platform)-$(VS_VERSION)
     type: zip
   - path: build\bin
     name: ENetDemo-$(configuration)-$(platform)-$(VS_VERSION)
     type: zip
+
+deploy:
+  release: enetcs-$(appveyor_repo_tag_name)
+  provider: GitHub
+  auth_token:
+    secure: G3HvPst0LoqEgOTkUPXXigIfBuKgvXyN4LaPNBxLTeYtahjcFfa5JUXE8EB+4onF
+  artifact: enetcs-win-$(configuration)-$(platform)-$(VS_VERSION)
+  on:
+    branch: master
+    appveyor_repo_tag: true
+    configuration: Release
