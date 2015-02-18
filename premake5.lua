@@ -30,6 +30,7 @@ solution "enet-cs"
     project "libenet"
         kind "SharedLib"
         language "C"
+        targetprefix ""
         targetdir "build/lib/%{cfg.buildcfg}-%{cfg.architecture}"
         files { "enet/*.c" }
         includedirs { "enet/include/" }
