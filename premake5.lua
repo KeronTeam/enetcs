@@ -4,6 +4,7 @@ newoption {
     value = "ARCH",
     allowed = {
         { "x86", "32-bit" },
+        { "x32", "32-bit" },
         { "x64", "64-bit" }
     }
 }
