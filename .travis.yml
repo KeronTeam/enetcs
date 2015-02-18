@@ -4,6 +4,8 @@ before_install:
   - sudo apt-get install -y build-essential clang wget unzip mono-devel
 before_script:
   - wget -O /tmp/premake-dev-linux.zip http://sourceforge.net/projects/premake/files/Premake/nightlies/premake-dev-linux.zip/download
+  - ls -l /tmp/premake-dev-linux.zip
+  - file /tmp/premake-dev-linux.zip
   - unzip /tmp/premake-dev-linux.zip
   - export PATH=$PATH:$PWD/bin/release
   - git submodule init
