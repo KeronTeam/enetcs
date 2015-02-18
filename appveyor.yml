@@ -39,7 +39,7 @@ artifacts:
     type: zip
 
 deploy:
-  release: enetcs-$(appveyor_repo_tag_name)
+  release: $(appveyor_repo_tag_name)
   provider: GitHub
   auth_token:
     secure: G3HvPst0LoqEgOTkUPXXigIfBuKgvXyN4LaPNBxLTeYtahjcFfa5JUXE8EB+4onF
