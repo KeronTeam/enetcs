@@ -1,4 +1,7 @@
 # ENetCS
+![Linux Build Status](https://img.shields.io/travis/KeronTeam/enetcs.svg?label=linux)
+![Windows Build Status](https://img.shields.io/appveyor/ci/gregoire-astruc/enetcs.svg?label=windows)
+
 C#.NET binding for ENet
 
 ## Building
