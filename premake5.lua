@@ -1,9 +1,30 @@
+newoption {
+    trigger = "arch",
+    description = "Which architecture to build. Defaults to the underlying platform if not provided.",
+    value = "ARCH",
+    allowed = {
+        { "x86", "32-bit" },
+        { "x64", "64-bit" }
+    }
+}
+
+if not _OPTIONS["arch"] then
+    if os.is64bit() then
+        _OPTIONS["arch"] = "x64"
+    else
+        _OPTIONS["arch"] = "x32"
+    end
+end
+
+if _OPTIONS["arch"] == "x86" then
+    _OPTIONS["arch"] = "x32"
+end
+
 solution "enet-cs"
     configurations { "Release", "Debug" }
     location "build"
 
-    filter { "system:windows" }
-        architecture "x32"
+    architecture (_OPTIONS["arch"])
 
     project "libenet"
         kind "SharedLib"
