@@ -14,7 +14,7 @@ script:
   - sed -i '/\@echo/,/\.cs/ { s/\\/\//g; }' build/ENet.make build/ENetDemo.make
   - make -C build/ verbose=1
 
-after_script:
+before_deploy:
   - cd build/lib/Release-x64
   - tar cjf enetcs-linux-x64.tar.bz2 ENet.dll libenet.so
   - cd ../..
