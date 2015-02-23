@@ -20,7 +20,6 @@ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Threading;
 
 namespace ENet
 {
@@ -59,15 +58,7 @@ namespace ENet
 
                     if (callback != null)
                     {
-                        try
-                        {
-                            Monitor.Exit(_userData);
-                            callback(packet);
-                        }
-                        finally
-                        {
-                            Monitor.Enter(_userData);
-                        }
+                        callback(packet);
                     }
                 }
                 finally
