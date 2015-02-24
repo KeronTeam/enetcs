@@ -50,8 +50,6 @@ namespace ENet
         {
             Packet packet = new Packet(native);
 
-            lock (_userData)
-            {
                 try
                 {
                     PacketFreeCallback callback = (PacketFreeCallback)packet.GetUserData(_freeCallbackKey);
@@ -65,7 +63,6 @@ namespace ENet
                 {
                     _userData.Remove(packet);
                 }
-            }
         }
 
         /// <summary>
@@ -75,18 +72,12 @@ namespace ENet
         {
             add
             {
-                lock (_userData)
-                {
-                    SetUserData(_freeCallbackKey, (PacketFreeCallback)GetUserData(_freeCallbackKey) + value);
-                }
+		    SetUserData(_freeCallbackKey, (PacketFreeCallback)GetUserData(_freeCallbackKey) + value);
             }
 
             remove
             {
-                lock (_userData)
-                {
                     SetUserData(_freeCallbackKey, (PacketFreeCallback)GetUserData(_freeCallbackKey) - value);
-                }
             }
         }
 
@@ -108,15 +99,12 @@ namespace ENet
         {
             if (key == null) { key = _userDataDefaultKey; }
 
-            lock (_userData)
-            {
                 Dictionary<object, object> packetUserData;
                 if (!_userData.TryGetValue(this, out packetUserData)) { return null; }
 
                 object value;
                 if (!packetUserData.TryGetValue(key, out value)) { return null; }
                 return value;
-            }
         }
 
         /// <summary>
@@ -137,9 +125,7 @@ namespace ENet
         {
             if (key == null) { key = _userDataDefaultKey; }
 
-            lock (_userData)
-            {
-                CheckInitialized();
+		CheckInitialized();
                 if (NativeData->freeCallback != _freeCallbackFunctionPointer)
                 {
                     if (NativeData->freeCallback != IntPtr.Zero) { throw new InvalidOperationException("An unknown free callback is set on this packet."); }
@@ -161,7 +147,6 @@ namespace ENet
                 {
                     packetUserData[key] = value;
                 }
-            }
         }
     }
 }

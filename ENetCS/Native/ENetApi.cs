@@ -44,7 +44,6 @@ namespace ENet.Native
 
         #region Platform Detection
         internal static ENetApi _platform;
-        internal static object _platformLock = new object();
 
         internal ENetApi()
         {
@@ -57,22 +56,15 @@ namespace ENet.Native
             {
                 if (_platform == null)
                 {
-                    lock (_platformLock)
-                    {
-                        if (_platform == null)
-                        {
-                            ENetApi platform = new ENetApiPlatform();
-                            ENetCallbacks inits = new ENetCallbacks();
+		    ENetApi platform = new ENetApiPlatform();
+		    ENetCallbacks inits = new ENetCallbacks();
 
-                            if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
-                            {
-                                _platform = platform;
-                            }
-                        }
+		    if (platform.initialize_with_callbacks(ENET_VERSION, ref inits) >= 0)
+		    {
+			_platform = platform;
+		    }
 
-                        return _platform;
-                    }
-                }
+		}
 
                 return _platform;
             }
