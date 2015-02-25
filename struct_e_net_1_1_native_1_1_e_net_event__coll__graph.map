@@ -1,0 +1,6 @@
+<map id="ENet.Native.ENetEvent" name="ENet.Native.ENetEvent">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_native_1_1_e_net_peer.html" title="ENet.Native.ENetPeer" alt="" coords="219,99,373,125"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_native_1_1_e_net_list_node.html" title="ENet.Native.ENetListNode" alt="" coords="5,7,184,33"/>
+<area shape="rect" id="node4" href="$struct_e_net_1_1_native_1_1_e_net_host.html" title="ENet.Native.ENetHost" alt="" coords="286,7,441,33"/>
+<area shape="rect" id="node5" href="$struct_e_net_1_1_native_1_1_e_net_packet.html" title="ENet.Native.ENetPacket" alt="" coords="398,99,567,125"/>
+</map>

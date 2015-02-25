@@ -1,0 +1,5 @@
+<map id="ENet.Packet.Remove" name="ENet.Packet.Remove">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_packet.html#ad3b69a72ed2b53f87b7d7e8b7750f8dd" title="Checks if the packet contains a particular byte, and if so, returns the index. " alt="" coords="213,5,360,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_packet.html#a22ddd74b07416a99d83fea8d38088bb8" title="Removes the byte at the specified index from the packet. " alt="" coords="205,56,368,83"/>
+<area shape="rect" id="node4" href="$struct_e_net_1_1_packet.html#ad064396b5f0bea2c75ef7bc186654de6" title="Resizes the packet. " alt="" coords="417,56,559,83"/>
+</map>

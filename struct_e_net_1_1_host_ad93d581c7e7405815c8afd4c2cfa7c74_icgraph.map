@@ -1,0 +1,4 @@
+<map id="ENet.Host.Initialize" name="ENet.Host.Initialize">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_host.html#ad1bfc3744ce39920b03ddbb7a9eaba8a" title="Initialize a host that will not accept connections. " alt="" coords="192,5,363,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_host.html#aaf8465b7760bd6d9f7bca0d3cc706d4f" title="Initialize a host that will accept connections on any IP address. " alt="" coords="190,56,365,83"/>
+</map>

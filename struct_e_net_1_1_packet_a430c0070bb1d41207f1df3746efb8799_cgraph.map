@@ -1,0 +1,4 @@
+<map id="ENet.Packet.Add" name="ENet.Packet.Add">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_packet.html#a3cf7ac00e48bfa1504f9d84a6681b68e" title="Inserts a byte in the packet. " alt="" coords="179,5,314,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_packet.html#ad064396b5f0bea2c75ef7bc186654de6" title="Resizes the packet. " alt="" coords="363,5,506,32"/>
+</map>

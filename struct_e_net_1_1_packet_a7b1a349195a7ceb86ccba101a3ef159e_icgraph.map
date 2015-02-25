@@ -1,0 +1,4 @@
+<map id="ENet.Packet.CopyTo" name="ENet.Packet.CopyTo">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_packet.html#a878b6087e59f9bbad84151c79f106aaa" title="Copies part of the packet data into an array. " alt="" coords="205,5,352,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_packet.html#a010f7c4531dcc231006189d002f1732d" title="Gets all bytes of the packet data. " alt="" coords="201,56,357,83"/>
+</map>

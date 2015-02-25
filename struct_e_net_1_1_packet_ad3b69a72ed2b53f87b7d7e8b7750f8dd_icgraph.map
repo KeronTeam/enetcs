@@ -1,0 +1,4 @@
+<map id="ENet.Packet.IndexOf" name="ENet.Packet.IndexOf">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_packet.html#ab0d2909558c33847ea70d22733c43fdd" title="Checks if the packet contains a particular byte. " alt="" coords="201,5,354,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_packet.html#a3582690fe0469044809b7e944840e462" title="Removes the first byte in the packet with the specified value. " alt="" coords="202,56,353,83"/>
+</map>

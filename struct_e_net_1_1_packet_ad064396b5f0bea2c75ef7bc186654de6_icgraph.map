@@ -1,0 +1,7 @@
+<map id="ENet.Packet.Resize" name="ENet.Packet.Resize">
+<area shape="rect" id="node2" href="$struct_e_net_1_1_packet.html#ae4238fe554394a6bc9cd6f1190530742" title="Sets the packet length to zero. " alt="" coords="213,5,345,32"/>
+<area shape="rect" id="node3" href="$struct_e_net_1_1_packet.html#a3cf7ac00e48bfa1504f9d84a6681b68e" title="Inserts a byte in the packet. " alt="" coords="211,56,346,83"/>
+<area shape="rect" id="node5" href="$struct_e_net_1_1_packet.html#a22ddd74b07416a99d83fea8d38088bb8" title="Removes the byte at the specified index from the packet. " alt="" coords="197,107,360,133"/>
+<area shape="rect" id="node4" href="$struct_e_net_1_1_packet.html#a430c0070bb1d41207f1df3746efb8799" title="Adds a byte to the end of the packet. " alt="" coords="422,56,546,83"/>
+<area shape="rect" id="node6" href="$struct_e_net_1_1_packet.html#a3582690fe0469044809b7e944840e462" title="Removes the first byte in the packet with the specified value. " alt="" coords="409,107,559,133"/>
+</map>
